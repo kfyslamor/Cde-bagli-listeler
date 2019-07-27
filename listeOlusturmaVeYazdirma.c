@@ -2,35 +2,35 @@
 
 struct node{
 	int data;
-	struct node* next; // her zaman icin bir sonraki dügümü gösterecek olan pointer.
-}*head,*temp; // head = her zaman icin baslangici gösterecek olan "dügüm" pointeri.
-			  // temp = listenin icinde, sirasiyla dügümlere erismemizi saglayacak bir dügüm pointeri.
+	struct node* next; // her zaman icin bir sonraki dÃ¼gÃ¼mÃ¼ gÃ¶sterecek olan pointer.
+}*head,*temp; // head = her zaman icin baslangici gÃ¶sterecek olan "dÃ¼gÃ¼m" pointeri.
+			  // temp = listenin icinde, sirasiyla dÃ¼gÃ¼mlere erismemizi saglayacak bir dÃ¼gÃ¼m pointeri.
 
 void createList(int n)
 {
 	int i; // sayac
-	struct node* newNode = (int*)malloc(sizeof(struct node)); // Yeni bir dügüm icin hafizada yer acilmasi.
+	struct node* newNode = (int*)malloc(sizeof(struct node)); // Yeni bir dÃ¼gÃ¼m icin hafizada yer acilmasi.
 	newNode->data = 1;
-	head = newNode; // baslangic pointerinin yeni olusturulan dügümün basini göstermesi.
-	temp = head; // gecici pointerin da baslangici göstermesi gerekiyor cünkü listeyi okumaya buradan baslayacak.
-	for(i=0;i<n;i++) // i = 1, ile baslamasinin sebebi ilk dügümün özel olmasi ve baslangici temsil etmesi, diger dügümler sadece birbirini gösterecek.
+	head = newNode; // baslangic pointerinin yeni olusturulan dÃ¼gÃ¼mÃ¼n basini gÃ¶stermesi.
+	temp = head; // gecici pointerin da baslangici gÃ¶stermesi gerekiyor cÃ¼nkÃ¼ listeyi okumaya buradan baslayacak.
+	for(i=0;i<n;i++) // i = 1, ile baslamasinin sebebi ilk dÃ¼gÃ¼mÃ¼n Ã¶zel olmasi ve baslangici temsil etmesi, diger dÃ¼gÃ¼mler sadece birbirini gÃ¶sterecek.
 	{
-		newNode = (int*) malloc(sizeof(struct node)); // her seferinde yeni bir dügüm icin alan ayrilmasi.
+		newNode = (int*) malloc(sizeof(struct node)); // her seferinde yeni bir dÃ¼gÃ¼m icin alan ayrilmasi.
 		newNode->data = i+2;
-		temp->next = newNode; // bir önceki dügüm, her seferinde olusturulan yeni dügüme baglantiyi bu kodla saglayacak.
-		newNode->next = NULL; // yeni olusturulan dügüm, NULL'u göstermezse liste bitmesi gerektigi yerde bitmez.
-		temp = temp->next; // gecici olarak atadigimiz pointerin, her seferinde yeniden olusturacagimiz pointeri göstermesi.
+		temp->next = newNode; // bir Ã¶nceki dÃ¼gÃ¼m, her seferinde olusturulan yeni dÃ¼gÃ¼me baglantiyi bu kodla saglayacak.
+		newNode->next = NULL; // yeni olusturulan dÃ¼gÃ¼m, NULL'u gÃ¶stermezse liste bitmesi gerektigi yerde bitmez.
+		temp = temp->next; // gecici olarak atadigimiz pointerin, her seferinde yeniden olusturacagimiz pointeri gÃ¶stermesi.
 	}
 }
 
 void printList()
 {
 	int i=1;
-	temp = head; // head hicbir zaman degismemeli ve her okuma yaptiktan sonra temp pointerinin headi gösterdigin emin olunmali.
-	while(temp->next!=NULL) // gecici olarak kullandigimiz pointerin ->next'i (yani gösterdigi dügüm) NULL olmadigi sürece assagidaki islemleri yap
+	temp = head; // head hicbir zaman degismemeli ve her okuma yaptiktan sonra temp pointerinin headi gÃ¶sterdigin emin olunmali.
+	while(temp->next!=NULL) // gecici olarak kullandigimiz pointerin ->next'i (yani gÃ¶sterdigi dÃ¼gÃ¼m) NULL olmadigi sÃ¼rece assagidaki islemleri yap
 	{
 		printf("%d. eleman = %d\n",i++,temp->data);
-		temp=temp->next; //gecici olarak kullanilan pointer, icindeki degeri her yazdirdiginda kendini iteleyerek, önündeki dügümünün icindeki veriyi yazdiracak.
+		temp=temp->next; //gecici olarak kullanilan pointer, icindeki degeri her yazdirdiginda kendini iteleyerek, Ã¶nÃ¼ndeki dÃ¼gÃ¼mÃ¼nÃ¼n icindeki veriyi yazdiracak.
 	}
 }
 
@@ -41,3 +41,5 @@ int main()
 	createList(n);
 	printList();
 }
+
+// referans https://codeforwin.org/2015/09/singly-linked-list-data-structure-in-c.html
