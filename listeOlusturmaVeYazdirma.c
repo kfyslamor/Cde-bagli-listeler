@@ -27,7 +27,7 @@ void printList()
 {
 	int i=1;
 	temp = head; // head hicbir zaman degismemeli ve her okuma yaptiktan sonra temp pointerinin headi gösterdigin emin olunmali.
-	while(temp->next!=NULL) // gecici olarak kullandigimiz pointerin ->next'i (yani gösterdigi dügüm) NULL olmadigi sürece assagidaki islemleri yap
+	while(temp!=NULL) // gecici olarak kullandigimiz pointerin icindeki dügüm NULL olmadigi sürece assagidaki islemleri yap
 	{
 		printf("%d. eleman = %d\n",i++,temp->data);
 		temp=temp->next; //gecici olarak kullanilan pointer, icindeki degeri her yazdirdiginda kendini iteleyerek, önündeki dügümünün icindeki veriyi yazdiracak.
