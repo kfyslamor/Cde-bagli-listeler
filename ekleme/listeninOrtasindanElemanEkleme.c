@@ -16,12 +16,12 @@ void addMiddle()
 		temp = temp->next;
 		i++;
 	} // iteleme bittikten sonra
-	struct node* newNode = (int*)malloc(sizeof(struct node)); // dügüm icin hafizada yer acildi.
+	struct node* newNode = (int*)malloc(sizeof(struct node)); // dÃ¼gÃ¼m icin hafizada yer acildi.
 	struct node* after; // deger degisecegi icin, hafizadaki yeri koruma amacli tanimlandi.
 	after = temp->next;
-	temp->next = newNode; // suanda bulundugumuz dügümün gösterecegi dügüm yeni olusturalacak olan dügüm.
+	temp->next = newNode; // suanda bulundugumuz dÃ¼gÃ¼mÃ¼n gÃ¶sterecegi dÃ¼gÃ¼m yeni olusturalacak olan dÃ¼gÃ¼m.
 	newNode->data = 55; // veriyi koyduk
-	newNode->next = after;	// yeni olusturulan dügüm olusturuldu ve listeye eklendi, örnegin siralamada 6. eleman oldu eski 6. elemani simdiki 7. elemani göstermesi icin bu satir gerekli.. 
+	newNode->next = after;	// yeni olusturulan dÃ¼gÃ¼m olusturuldu ve listeye eklendi, Ã¶rnegin siralamada 6. eleman oldu eski 6. elemani simdiki 7. elemani gÃ¶stermesi icin bu satir gerekli.. 
 }
 
 void createList(int n)
@@ -31,7 +31,7 @@ void createList(int n)
 	newNode->data = 1;
 	head = newNode; 
 	temp = head;
-	for(i=0;i<n;i++) 
+	for(i=0;i<n-1;i++) 
 	{
 		newNode = (int*) malloc(sizeof(struct node)); 
 		newNode->data = i+2;
@@ -45,7 +45,7 @@ void printList()
 {
 	int i=1;
 	temp = head; 
-	while(temp->next!=NULL) 
+	while(temp!=NULL) 
 	{
 		printf("%d. eleman = %d\n",i++,temp->data);
 		temp=temp->next; 
