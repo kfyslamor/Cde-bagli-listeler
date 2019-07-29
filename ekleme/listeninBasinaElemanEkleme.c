@@ -1,31 +1,31 @@
 #include <stdio.h>
-
+#include "stdlib.h"
 struct node{
 	int data;
-	struct node* next; 
-}*head,*temp; 
+	struct node* next;
+}*head,*temp;
 
 void addFirst()
 {
-	struct node* newNode = (int*)malloc(sizeof(struct node*)); // dügüm icin hafizada yer actim
-	newNode->next = head; // yeni olusturulan dügümün gösterecegi dügüm, baslangic dügümü olacak.
+	struct node* newNode = (int*)malloc(sizeof(struct node*)); // dÃ¼gÃ¼m icin hafizada yer actim
+	newNode->next = head; // yeni olusturulan dÃ¼gÃ¼mÃ¼n gÃ¶sterecegi dÃ¼gÃ¼m, baslangic dÃ¼gÃ¼mÃ¼ olacak.
 	newNode->data = 11; // icindeki veri = 11.
-	head=newNode; // baslangicin yeni adresi, yeni olusturulan dügüm.
-}			  
+	head=newNode; // baslangicin yeni adresi, yeni olusturulan dÃ¼gÃ¼m.
+}
 
 void createList(int n)
 {
 	int i; // sayac
 	struct node* newNode = (int*)malloc(sizeof(struct node));
 	newNode->data = 1;
-	head = newNode; 
+	head = newNode;
 	temp = head;
-	for(i=0;i<n;i++) 
+	for(i=0;i<n-1;i++)
 	{
-		newNode = (int*) malloc(sizeof(struct node)); 
+		newNode = (int*) malloc(sizeof(struct node));
 		newNode->data = i+2;
-		temp->next = newNode; 
-		newNode->next = NULL; 
+		temp->next = newNode;
+		newNode->next = NULL;
 		temp = temp->next;
 	}
 }
@@ -33,11 +33,11 @@ void createList(int n)
 void printList()
 {
 	int i=1;
-	temp = head; 
-	while(temp->next!=NULL) 
+	temp = head;
+	while(temp!=NULL)
 	{
 		printf("%d. eleman = %d\n",i++,temp->data);
-		temp=temp->next; 
+		temp=temp->next;
 	}
 }
 
