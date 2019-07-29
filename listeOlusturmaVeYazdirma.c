@@ -42,4 +42,4 @@ int main()
 	printList();
 }
 
-// referans https://codeforwin.org/2015/09/singly-linked-list-data-structure-in-c.html
+// referans https://codeforwin.org/2015/09/singly-linked-list-data-structure-in-c.html 
