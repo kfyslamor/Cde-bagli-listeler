@@ -13,7 +13,7 @@ void createList(int n)
 	newNode->data = 1;
 	head = newNode; // baslangic pointerinin yeni olusturulan dügümün basini göstermesi.
 	temp = head; // gecici pointerin da baslangici göstermesi gerekiyor cünkü listeyi okumaya buradan baslayacak.
-	for(i=0;i<n;i++) // i = 1, ile baslamasinin sebebi ilk dügümün özel olmasi ve baslangici temsil etmesi, diger dügümler sadece birbirini gösterecek.
+	for(i=1;i<n;i++) // i = 1, ile baslamasinin sebebi ilk dügümün özel olmasi ve baslangici temsil etmesi, diger dügümler sadece birbirini gösterecek.
 	{
 		newNode = (int*) malloc(sizeof(struct node)); // her seferinde yeni bir dügüm icin alan ayrilmasi.
 		newNode->data = i+2;
