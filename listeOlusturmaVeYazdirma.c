@@ -9,7 +9,7 @@ struct node{
 void createList(int n)
 {
 	int i; // sayac
-	struct node* newNode = (int*)malloc(sizeof(struct node)); // Yeni bir dügüm icin hafizada yer acilmasi.
+	struct node* newNode = (struct node*)malloc(sizeof(struct node)); // Yeni bir dügüm icin hafizada yer acilmasi.
 	newNode->data = 1;
 	head = newNode; // baslangic pointerinin yeni olusturulan dügümün basini göstermesi.
 	temp = head; // gecici pointerin da baslangici göstermesi gerekiyor cünkü listeyi okumaya buradan baslayacak.
